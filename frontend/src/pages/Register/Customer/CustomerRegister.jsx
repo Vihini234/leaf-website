@@ -88,7 +88,7 @@ const CustomerRegistration = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="Enter your email"
+                placeholder="Enter your email address"
                 className="form-input"
                 required
               />
