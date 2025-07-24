@@ -1,0 +1,24 @@
+.seasonal-offers-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.seasonal-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.seasonal-offers-page h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c6b3d;
+}
+
+.seasonal-offers-page > .seasonal-offers-card {
+  margin-bottom: 2rem;
+  display: inline-block;
+  margin: 2rem;
+}

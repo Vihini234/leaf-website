@@ -1,0 +1,42 @@
+.farmer-section, .orders-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.farmer-section h2,
+.orders-section h2 {
+  margin-bottom: 1rem;
+  color: #114c24;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.orders-table {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
+.orders-table table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #cceacc;
+  border-radius: 8px;
+}
+
+.orders-table th, .orders-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #cceacc;
+  text-align: left;
+}
+
+.orders-table th {
+  background-color: #e6fce6;
+  color: #184d18;
+}

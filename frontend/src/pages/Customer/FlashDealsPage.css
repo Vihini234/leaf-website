@@ -1,0 +1,17 @@
+.flash-deals-page {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.flash-deals-page h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c6b3d;
+}
+
+.flash-deals-page > .flash-deal-card {
+  margin-bottom: 2rem;
+  display: inline-block;
+  margin: 2rem;
+}

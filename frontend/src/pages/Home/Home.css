@@ -1,0 +1,111 @@
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4fff4; 
+  color: #1b3c1b;
+}
+
+.banner-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.banner-text {
+  margin-top: 1rem;
+}
+
+.banner-text h2 {
+  font-size: 2rem;
+  color: #114c24;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  color: #336b3d;
+}
+
+.category-section {
+  padding: 2rem;
+  background-color: #e6fce6;
+  text-align: center;
+}
+
+.category-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2a5c2a;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.deals-section, .seasonal-section {
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.deals-section h3, .seasonal-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #294d29;
+}
+
+.deals-grid, .seasonal-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10rem;
+}
+
+.card {
+  border: 1px solid #cceacc;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+footer {
+  background-color: #d0e6d0;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  color: #114c24;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #114c24;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
