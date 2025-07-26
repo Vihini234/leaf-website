@@ -65,25 +65,22 @@ const DeliverRegistration = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-    }
-    
-    if (!formData.agreeToTerms) {
-      alert('Please agree to the Terms of Service and Privacy Policy');
-      return;
-    }
 
-    if (formData.serviceAreas.length === 0) {
-      alert('Please select at least one service area');
-      return;
-    }
-    
-    console.log('Form submitted:', formData);
-    alert('Delivery agent account created successfully!');
+    fetch('http://localhost/leaf/backend/api/Register/Delivery.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    });
   };
 
   return (

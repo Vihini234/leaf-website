@@ -35,23 +35,59 @@ const CustomerRegistration = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
-      return;
-    }
-    
-    if (!formData.agreeToTerms) {
-      alert('Please agree to the Terms of Service and Privacy Policy');
-      return;
-    }
-    
-    console.log('Form submitted:', formData);
-    alert('Account created successfully!');
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    alert('Passwords do not match!');
+    return;
+  }
+
+  if (!formData.agreeToTerms) {
+    alert('Please agree to the Terms of Service and Privacy Policy');
+    return;
+  }
+
+  const postData = {
+    role: 'consumer',
+    fullName: formData.fullName,
+    email: formData.email,
+    phoneNumber: formData.phoneNumber,
+    district: formData.district,
+    address: formData.address,
+    password: formData.password
   };
+
+  try {
+    const response = await fetch('http://localhost/leaf/backend/api/Register/Customer.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(postData)
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      alert('Account created successfully!');
+      setFormData({
+        role: 'consumer',
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        district: '',
+        address: '',
+        password: '',
+        confirmPassword: '',
+        agreeToTerms: false
+      });
+    } else {
+      alert('Error: ' + result.message);
+    }
+  } catch (error) {
+    console.error('Registration error:', error);
+    alert('Failed to connect to the server.');
+  }
+};
+
 
   return (
     <div className="registration-wrapper">
