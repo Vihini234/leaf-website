@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './i18n';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
-import Home from './Pages/Home/Home';
+import Home from './pages/Home/Home';
 import CustomerDash from './pages/Customer/CustomerDash';
 import FarmerDashboard from './pages/Farmer/FarmerDash';
 import DeliveryDash from './pages/DeliveryAgent/DeliveryDash';
@@ -12,13 +12,16 @@ import SeasonalOffersPage from './pages/Customer/SeasonalOffersPage';
 import Vegetable from './pages/Categories/Vegetable';
 import Fruits from './pages/Categories/Fruit';
 import DairyProducts from './pages/Categories/Dairy';
+import VegetablesPage from './pages/Farmer/VegetablesPage';
+import FruitsPage from './pages/Farmer/FruitsPage';
+import DairyPage from './pages/Farmer/DairyPage';
 import CustomerRegister from './pages/Register/Customer/CustomerRegister';
 import FarmerRegister from './pages/Register/Farmer/FarmerRegister';
 import DeliverRegister from './pages/Register/DeliveryAgent/DeliveryRegister';
 import CustomerProfile from './pages/Customer/CustomerProfile';
 import LoginPage from './pages/Login/LoginPage';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
-import Cart from './Pages/Cart/Cart';
+import Cart from './pages/Cart/Cart';
 
 <I18nextProvider i18n={i18n}>
   <App />
@@ -32,6 +35,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pages/Customer/CustomerDash" element={<CustomerDash />} />
         <Route path="/pages/Farmer/FarmerDash" element={<FarmerDashboard />} />
+        <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
+        <Route path="/farmer-vegetables" element={<VegetablesPage />} />
+        <Route path="/farmer-fruits" element={<FruitsPage />} />
+        <Route path="/farmer-dairy" element={<DairyPage />} />
         <Route path="/pages/DeliveryAgent/DeliveryDash" element={<DeliveryDash />} />
         <Route path="/flash-deals" element={<FlashDealsPage />} />
         <Route path="/seasonal-offers" element={<SeasonalOffersPage />} />

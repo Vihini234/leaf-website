@@ -16,7 +16,7 @@ export default function Login() {
     const { t } = useTranslation();
 
 
-    const handleSignIn = (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
 
         if (!loginAs) {
@@ -29,12 +29,26 @@ export default function Login() {
             return;
         }
 
-        if (loginAs === "Customer") {
-            navigate("/pages/Customer/CustomerDash");
-        } else if (loginAs === "Farmer") {
-            navigate("/pages/Farmer/FarmerDash");
-        } else if (loginAs === "Delivery") {
-            navigate("/pages/DeliveryAgent/DeliveryDash");
+        try {
+            const response = await fetch("http://localhost/leaf/backend/api/Login/login.php", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password, role: loginAs })
+            });
+            const result = await response.json();
+            if (result.success) {
+                if (loginAs === "Customer") {
+                    navigate("/pages/Customer/CustomerDash");
+                } else if (loginAs === "Farmer") {
+                    navigate("/pages/Farmer/FarmerDash");
+                } else if (loginAs === "Delivery") {
+                    navigate("/pages/DeliveryAgent/DeliveryDash");
+                }
+            } else {
+                alert(result.message || "Login failed. Please check your credentials.");
+            }
+        } catch {
+            alert("Failed to connect to the server.");
         }
     };
 

@@ -1,0 +1,35 @@
+[
+    {
+        "order_id": 1,
+        "order_date": "2025-07-28 22:28:07",
+        "order_status": "pending",
+        "total_amount": 45.5,
+        "customer_name": "John Doe",
+        "phone_number": "+1234567890",
+        "address": "123 Main St",
+        "district": "Central District",
+        "product_list": "Tomatoes (2 kg), Carrots (1 kg)"
+    },
+    {
+        "order_id": 2,
+        "order_date": "2025-07-28 19:28:07",
+        "order_status": "completed",
+        "total_amount": 32.75,
+        "customer_name": "Jane Smith",
+        "phone_number": "+1234567891",
+        "address": "456 Oak Ave",
+        "district": "North District",
+        "product_list": "Apples (3 kg), Milk (2 liters)"
+    },
+    {
+        "order_id": 3,
+        "order_date": "2025-07-28 00:28:07",
+        "order_status": "processing",
+        "total_amount": 28.25,
+        "customer_name": "Bob Wilson",
+        "phone_number": "+1234567892",
+        "address": "789 Pine St",
+        "district": "South District",
+        "product_list": "Oranges (2 kg)"
+    }
+]

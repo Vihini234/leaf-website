@@ -1,3 +1,323 @@
+/* Farmer Dashboard Styles */
+.farmer-dashboard {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, #114c24 0%, #16a34a 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.dashboard-header p {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.user-info {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.rating {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Analytics Cards */
+.analytics-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.analytics-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-left: 4px solid #16a34a;
+}
+
+.analytics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2rem;
+  background: #f0fdf4;
+  padding: 1rem;
+  border-radius: 12px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1f2937;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.action-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 3px solid #16a34a;
+}
+
+.action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.action-card h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #15803d;
+}
+
+.btn-secondary {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #dcfce7;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.btn-icon:hover {
+  background: #f0fdf4;
+}
+
+/* Section Headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #bbf7d0;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #15803d;
+  font-size: 1.5rem;
+}
+
+.section-header p {
+  margin: 0.25rem 0 0 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Tables */
+.products-table, .orders-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-table table, .orders-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.products-table th, .orders-table th {
+  background: #f0fdf4;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #15803d;
+  border-bottom: 1px solid #bbf7d0;
+}
+
+.products-table td, .orders-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+}
+
+.products-table tr:hover, .orders-table tr:hover {
+  background: #f0fdf4;
+}
+
+/* Status Badges */
+.status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status.available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.low-stock {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.confirmed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Analytics Section */
+.analytics-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.analytics-detailed-card {
+  background: #f0fdf4;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #bbf7d0;
+}
+
+.analytics-detailed-card h3 {
+  margin: 0 0 1.5rem 0;
+  color: #15803d;
+  font-size: 1.2rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* Legacy styles for backward compatibility */
 .farmer-section, .orders-section {
   padding: 2rem;
   text-align: center;
@@ -9,34 +329,245 @@
   color: #114c24;
 }
 
+/* Farmer Section */
+.farmer-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.farmer-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111827;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .category-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-}
-
-.orders-table {
-  margin-top: 1.5rem;
-  overflow-x: auto;
-}
-
-.orders-table table {
-  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  border: 1px solid #cceacc;
-  border-radius: 8px;
+  justify-items: center;
 }
 
-.orders-table th, .orders-table td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #cceacc;
-  text-align: left;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .farmer-dashboard {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .analytics-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .user-info {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .farmer-section .category-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .farmer-section {
+    padding: 1rem;
+  }
 }
 
-.orders-table th {
-  background-color: #e6fce6;
-  color: #184d18;
+/* Category Section Styles */
+.category-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #111827;
+}
+
+.product-description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-details .price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.product-details .quantity {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.product-details .status {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.product-details .status.active {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.product-actions .btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-actions .btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.add-product-section {
+  text-align: center;
+  padding: 2rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background-color: #f9fafb;
+}
+
+.add-product-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+}
+
+/* Make category cards clickable */
+.farmer-section .category-card {
+  width: 280px;
+  height: 320px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.farmer-section .category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(22, 163, 74, 0.2);
+}
+
+.farmer-section .category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.farmer-section .category-card:hover img {
+  transform: scale(1.05);
+}
+
+.farmer-section .category-card h3 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  padding: 0 1rem;
+}
+
+.farmer-section .category-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 0 1rem 1rem 1rem;
 }

@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1753716347,
+        "name": "Test Apple",
+        "description": "A test apple product",
+        "price": 2.5,
+        "quantity_available": 100,
+        "unit": "kg",
+        "category_name": "Fruits",
+        "image_url": "",
+        "status": "active",
+        "created_at": "2025-07-28 15:12:39",
+        "updated_at": "2025-07-28 15:12:39"
+    },
+    {
+        "id": 1753715576,
+        "name": "Test Apple",
+        "description": "A test apple product",
+        "price": 2.5,
+        "quantity_available": 100,
+        "unit": "kg",
+        "category_name": "Fruits",
+        "image_url": "",
+        "status": "active",
+        "created_at": "2025-07-28 15:12:40",
+        "updated_at": "2025-07-28 15:12:40"
+    },
+    {
+        "id": 1753716555,
+        "name": "Test Orange",
+        "description": "Fresh orange",
+        "price": 3.25,
+        "quantity_available": 50,
+        "unit": "kg",
+        "category_name": "Fruits",
+        "image_url": "",
+        "status": "active",
+        "created_at": "2025-07-28 15:13:56",
+        "updated_at": "2025-07-28 15:13:56"
+    }
+]

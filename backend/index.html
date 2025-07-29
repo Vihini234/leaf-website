@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf API - Farmer Dashboard Backend</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background-color: #f9fafb;
+        }
+        .header { 
+            background: linear-gradient(135deg, #114c24 0%, #16a34a 100%);
+            color: white; 
+            padding: 2rem; 
+            border-radius: 12px; 
+            margin-bottom: 2rem;
+        }
+        .endpoint { 
+            background: white; 
+            padding: 1.5rem; 
+            margin: 1rem 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #16a34a;
+        }
+        .test-btn { 
+            background: #16a34a; 
+            color: white; 
+            padding: 0.5rem 1rem; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin-right: 0.5rem;
+        }
+        .test-btn:hover { background: #15803d; }
+        .response { 
+            background: #f8fafc; 
+            padding: 1rem; 
+            border-radius: 4px; 
+            margin-top: 1rem; 
+            font-family: monospace; 
+            white-space: pre-wrap;
+        }
+        .status-ok { color: #16a34a; }
+        .status-error { color: #dc2626; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌱 Leaf API - Farmer Dashboard Backend</h1>
+        <p>Backend API testing interface for farmer dashboard functionality</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>📊 Dashboard Statistics</h3>
+        <p><strong>GET</strong> /api/Farmer/dashboard.php?farmer_id=1&type=stats</p>
+        <button class="test-btn" onclick="testAPI('/api/Farmer/dashboard.php?farmer_id=1&type=stats', 'dashboard-stats')">Test Dashboard Stats</button>
+        <div id="dashboard-stats" class="response"></div>
+    </div>
+
+    <div class="endpoint">
+        <h3>📦 Products List</h3>
+        <p><strong>GET</strong> /api/Farmer/products_mock.php?farmer_id=1</p>
+        <button class="test-btn" onclick="testAPI('/api/Farmer/products_mock.php?farmer_id=1', 'products-list')">Test Products</button>
+        <div id="products-list" class="response"></div>
+    </div>
+
+    <div class="endpoint">
+        <h3>📋 Orders List</h3>
+        <p><strong>GET</strong> /api/Farmer/orders_mock.php?farmer_id=1</p>
+        <button class="test-btn" onclick="testAPI('/api/Farmer/orders_mock.php?farmer_id=1', 'orders-list')">Test Orders</button>
+        <div id="orders-list" class="response"></div>
+    </div>
+
+    <div class="endpoint">
+        <h3>📈 Order Statistics</h3>
+        <p><strong>GET</strong> /api/Farmer/orders_mock.php?farmer_id=1&stats=true</p>
+        <button class="test-btn" onclick="testAPI('/api/Farmer/orders_mock.php?farmer_id=1&stats=true', 'order-stats')">Test Order Stats</button>
+        <div id="order-stats" class="response"></div>
+    </div>
+
+    <div class="endpoint">
+        <h3>🔍 Specific Order Details</h3>
+        <p><strong>GET</strong> /api/Farmer/orders_mock.php?farmer_id=1&order_id=#1023</p>
+        <button class="test-btn" onclick="testAPI('/api/Farmer/orders_mock.php?farmer_id=1&order_id=%231023', 'order-details')">Test Order Details</button>
+        <div id="order-details" class="response"></div>
+    </div>
+
+    <div class="endpoint">
+        <h3>➕ Add New Product</h3>
+        <p><strong>POST</strong> /api/Farmer/products_mock.php</p>
+        <button class="test-btn" onclick="testAddProduct()">Test Add Product</button>
+        <div id="add-product" class="response"></div>
+    </div>
+
+    <script>
+        async function testAPI(endpoint, responseId) {
+            const responseDiv = document.getElementById(responseId);
+            responseDiv.innerHTML = 'Loading...';
+            
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                
+                responseDiv.innerHTML = `<div class="status-ok">✅ Success (${response.status})</div>\n${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                responseDiv.innerHTML = `<div class="status-error">❌ Error</div>\n${error.message}`;
+            }
+        }
+
+        async function testAddProduct() {
+            const responseDiv = document.getElementById('add-product');
+            responseDiv.innerHTML = 'Loading...';
+            
+            const productData = {
+                farmer_id: 1,
+                name: "Fresh Spinach",
+                description: "Organic spinach leaves from our farm",
+                price: 80.00,
+                category_id: 2,
+                quantity_available: 20,
+                unit: "kg"
+            };
+            
+            try {
+                const response = await fetch('/api/Farmer/products_mock.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productData)
+                });
+                
+                const data = await response.json();
+                responseDiv.innerHTML = `<div class="status-ok">✅ Success (${response.status})</div>\n${JSON.stringify(data, null, 2)}`;
+            } catch (error) {
+                responseDiv.innerHTML = `<div class="status-error">❌ Error</div>\n${error.message}`;
+            }
+        }
+
+        // Test all endpoints on page load
+        window.onload = function() {
+            console.log('🌱 Leaf API Testing Interface Loaded');
+            console.log('Backend Server: http://localhost:8000');
+            console.log('Frontend App: http://localhost:5175');
+        };
+    </script>
+</body>
+</html>

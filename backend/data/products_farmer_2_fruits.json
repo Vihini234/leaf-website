@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1753749816,
+        "name": "Papaya",
+        "description": "Fresh Papaya",
+        "price": 120,
+        "quantity_available": 1,
+        "unit": "kg",
+        "category_name": "Fruits",
+        "image_url": "",
+        "status": "active",
+        "created_at": "2025-07-29 00:28:34",
+        "updated_at": "2025-07-29 00:28:34"
+    }
+]

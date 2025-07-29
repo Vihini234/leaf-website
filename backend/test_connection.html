@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Backend Connection</title>
+</head>
+<body>
+    <h1>Backend Connection Test</h1>
+    
+    <div id="test-results"></div>
+    
+    <button onclick="testGetProducts()">Test Get Products</button>
+    <button onclick="testAddProduct()">Test Add Product</button>
+    
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+        const farmerId = 1;
+        
+        async function testGetProducts() {
+            try {
+                const response = await fetch(`${API_BASE}/category_products.php?farmer_id=${farmerId}&category=fruits`);
+                const data = await response.json();
+                
+                document.getElementById('test-results').innerHTML = 
+                    '<h3>Get Products Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    
+            } catch (error) {
+                document.getElementById('test-results').innerHTML = 
+                    '<h3>Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+        
+        async function testAddProduct() {
+            try {
+                const productData = {
+                    name: 'Test Apple',
+                    description: 'A test apple product',
+                    price: 2.50,
+                    stock: 100,
+                    unit: 'kg',
+                    farmer_id: farmerId,
+                    category: 'fruits'
+                };
+                
+                const response = await fetch(`${API_BASE}/category_products.php`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(productData)
+                });
+                
+                const data = await response.json();
+                
+                document.getElementById('test-results').innerHTML = 
+                    '<h3>Add Product Result:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    
+            } catch (error) {
+                document.getElementById('test-results').innerHTML = 
+                    '<h3>Error:</h3><pre>' + error.message + '</pre>';
+            }
+        }
+    </script>
+</body>
+</html>
